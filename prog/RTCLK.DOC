@@ -1,0 +1,136 @@
+                   THE STRICKLAND REAL-TIME CLOCK PROGRAMS
+
+             Copyright (C) 1988, Tom Strickland, Alexandria, VA
+
+  The Strickland RT clock programs CLKDRV.SYS, RTCLOCK.COM, REALTIME.COM, and
+DOSTIME.COM are designed to provide a standard, universal method of
+addressing a certain widely used species of real-time (RT) clock that is not
+an AT-CMOS.  Depending on the manufacturer, the supporting software that
+comes with these clocks can have names like GETTIME, SETTIME, TIMER, CLSET,
+etc.  All of these manufacturer-supplied programs act and feel different, and
+they all talk to the RT clock in different ways, even though the clock
+supplied by all the manufacturers is essentially the same one.
+
+  The most important difference between manufacturers is the way they handle
+the year with these clocks.  No two seem to do it the same way.  Another
+important difference is that some of the proprietary programs allow you to
+put new time and date on the command line, while others insist on making you
+respond to prompts for that information.  Some of the manufacturers supply
+one program to set the RT clock and another program to read it, while other
+manufacturers use one program to do either, depending on what command line
+parameter is used.  Finally, some manufacturers fix things so only their
+programs can even detect the presence of the RT clock, even though it's
+basically the same clock that all the other manufacturers are using.  In
+short, each manufacturer locks you into his particular way of dealing with
+the same clock, and in the process makes it practically impossible for anyone
+else to write programs that can work directly with all these clocks.
+
+  Strickland's free RT clock programs talk to all these clocks in the same
+way, and this brings some distinct advantages that are not available with the
+original proprietary software that came with them.
+
+  The chief advantage of Strickland's programs is that they open the way for
+programmers to write application software that can work with all such clocks,
+regardless of brand.  The first such program is TIMESET, version 4.00, which
+can set virtually any brand of this type of RT clock to Naval Observatory
+time.  But Strickland's programs open the way for many more applications to
+be written that can work directly with these clocks.  The AT CMOS clock is
+handled essentially the same way by all manufacturers, to the benefit of the
+owners of those clocks.  Now, with Strickland's RT clock software, the owners
+of these other RT clocks will be able to enjoy the same benefits of
+standardization that the owners of AT CMOS clocks do.
+
+  There are some important rules to follow in using the Strickland programs. 
+Remember that these rules apply only to RT clocks that are not the AT CMOS:
+
+Rule 1.   IF YOU WANT TIMESET.EXE VER. 4.00 TO SET YOUR REAL-TIME CLOCK
+          BY THE NAVAL OBSERVATORY, YOU HAVE TO USE STRICKLAND'S RT CLOCK
+          SOFTWARE.  Put your clock's original programs away because they
+          and TIMESET are incompatible.
+
+
+Rule 2.   YOU CAN'T USE BOTH YOUR ORIGINAL RT CLOCK SOFTWARE AND
+          STRICKLAND'S SOFTWARE.  It has to be one system or the other.
+
+  If you set your RT clock with Strickland's RTCLOCK.COM (or with
+TIMESET.EXE, Version 4.00) you should not use the original software that came
+with your RT clock to try to read that clock, because it will return the
+wrong date.  Conversely, if you set your RT clock with your original
+software, it's futile to try to read it later with Strickland's REALTIME.COM
+because it, too, will return the wrong date.
+
+  You have to pick one system or the other -- either Strickland's or somebody
+else's -- and stick with it for both setting and reading the RT clock.  This
+also means that if you choose Strickland's software, you have to change your
+AUTOEXEC.BAT file to remove the name of any original software for your RT
+clock that is there and replace it with a comparable one from Strickland's
+set.  Thus, if your AUTOEXEC.BAT file has a line that tells the proprietary
+program TIMER.COM to move RT time and date to DOS on boot-up, you have to
+replace it with a line that tells Strickland's RTCLOCK.COM to do the same
+thing, like this:
+
+                               RTCLOCK -G
+
+(unless you are using the Strickland RT clock driver--see below).  The -G
+means get the time/date from the RT clock and send it to DOS.
+
+  Later, if you change the time or date in DOS, either directly or through
+the action of some program, you can send the new time or date to the RT clock
+with:
+
+                               RTCLOCK -S
+
+(unless you are using the Strickland RT clock driver--see below).
+
+  Thereafter, you can read the RT clock's time and date by running
+Strickland's REALTIME.COM in DOS, but not by running the comparable program
+that came with your RT clock.  If you use the original software you'll get
+erroneous readings.
+
+  Remember: pick one system or the other and use it consistently.  If you
+want TIMESET version 4.00 to set your RT clock, however, you have no choice:
+it has to be Strickland's system, because that's the system TIMESET 4 uses.
+
+Rule 3.   IF YOU INSTALL STRICKLAND'S RT CLOCK DRIVER YOU SHOULD NOT USE
+          ANY OTHER CLOCKSETTING SOFTWARE TO CHANGE THE TIME OR DATE IN YOUR
+          RT CLOCK -- NEITHER STRICKLAND'S RTCLOCK.COM NOR THE CLOCKSETTING
+          SOFTWARE THAT CAME WITH YOUR RT CLOCK.
+
+  With the driver installed, there is no need to use RTCLOCK.COM or any other
+program to move time/date between DOS and the RT clock.  The driver takes
+care of that any time you change time or date in DOS, or even look at it. 
+You also do not need to use any special software to read the RT clock when
+the driver is installed, because the driver moves that information to DOS
+whenever you ask the DOS clock/calendar to report the time or date.
+
+  You will get strange results if you try to set your RT clock with special
+software if the driver is installed.  Don't do it, because the program that
+sets your RT clock gets into an unwholesome competition with the driver. 
+Think of it this way:  RTCLOCK (or any other program for accessing the RT
+clock) is like a messenger that knocks on the door separating the DOS
+clock/calendar and the RT clock to deliver messages from one to the other. 
+But CLKDRV.SYS knocks the whole wall down, so there is no need for an outside
+messenger and no need for knocking.  If you nevertheless send RTCLOCK or
+another program to pound on a door that no longer exists, it just gets in the
+driver's way and causes confusion.  CLKDRV.SYS wants to hog the whole show. 
+Let it.
+
+  To install Strickland's CLKDRV.SYS you have to put this line in your
+CONFIG.SYS file:
+
+                         DEVICE = CLKDRV.SYS.
+
+Then reboot your system--but only after you have removed any RT clock program
+names from your AUTOEXEC.BAT file.
+
+
+  Questions about the Strickland RT clock programs should be directed to Tom
+Strickland, co-sysop of the Corral BBS, (703-360-5097, 1200/2400 baud, 8 data
+bits, no parity).
+
+NOTE:  The manual for TIMESET version 4.00 contains an error in the
+description of how to use RTCLOCK.COM.  It says the command to move time and
+date from the RT clock to DOS is RTCLOCK /G and that the command to move DOS
+time and date to the RT clock is RTCLOCK /S.  The slash is incorrect.  It has
+to be a hyphen.  Make it RTCLOCK -G, and RTCLOCK -S.
+
