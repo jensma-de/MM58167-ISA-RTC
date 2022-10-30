@@ -1,5 +1,5 @@
 # MM58167-ISA-RTC
-![This is an image](./info/rtc.jpg)
+![header](./info/rtc.jpg)
 
-[Schematics](./schematics.pdf)
-[InteractiveBOM](./ibom.html)
+[Schematics](./info/schematics.pdf)
+[Photo of assembled RTC](./info/assembled.jpg)
