@@ -37,7 +37,7 @@ Configure the RTC with these programs:
         <tr>
             <td align="left" valign="top">GETCLOCK.COM & SETCLOCK.COM <br/><a href="./prog/hi/">HI</a> & <a href="./prog/low/">LOW</a></td>
             <td align="left" valign="top">DIAMOND FLOWER ELECTRONIC CO. (C)COPY RIGHT 1984, 1985, 1986</td>
-            <td align="left" valign="top">GETCLOCK.COM:<br>Set system time to time from RTC.<br><br>SETCLOCK.COM:<br>Set RTC time to system time.<br><br><b>Available as HI (200h & 240h) and LOW (300h & 340h)</b></td>
+            <td align="left" valign="top">GETCLOCK.COM:<br>Set system time to time from RTC.<br><br>SETCLOCK.COM:<br>Set RTC time to system time.<br><br><b>Available as HI (300h & 340h) and LOW (200h & 240h)</b></td>
         </tr>
     </tbody>
 </table>
