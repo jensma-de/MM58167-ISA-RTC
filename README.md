@@ -4,12 +4,16 @@
 ## What is this?
 A 8bit real time clock for old computers. Keeps the time when the computer is shut down. Fully covered address bus to prevent conflicts.
 
+
 ## Why is this?
 Yes, there are many more modern RTC's out there. I made this just for fun and with parts that were readily available back in the 80s. I like to keep things period correct 😉 All parts and even the software were readily available back then.
 
+
 ## How to use it?
 First set the jumpers for the RTC. You can choose between 200h, 240h, 300h and 340h.
+
 ![jumpers](./info/jumpers.png)
+*RTC set to 340h*
 
 Plug the card into a free ISA slot, either 8bit or 16bit.
 
