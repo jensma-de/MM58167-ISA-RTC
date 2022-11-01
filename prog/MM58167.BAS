@@ -163,7 +163,7 @@ usage:
         PRINT ""
         PRINT "--------------------------------------------------------"
         PRINT "Credits to:"
-        PRINT "github.com/mrehkopf/"
+        PRINT "github.com/mrehkopf/ & github.com/Sciurus68k/"
         PRINT ""
         PRINT "Project page:"
         PRINT "github.com/jensma-de/MM58167-ISA-RTC/"
