@@ -62,4 +62,5 @@ Alternatively you can download and check out the interactive BOM:
 [Photo of assembled RTC](./info/assembled.jpg)
 
 ## Credit
-[@mrehkopf](https://github.com/mrehkopf) - thanks for your help!
+[@mrehkopf](https://github.com/mrehkopf)
+[@Sciurus68k](https://github.com/Sciurus68k)
