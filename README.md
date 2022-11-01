@@ -13,7 +13,9 @@ Yes, there are many more modern RTC's out there. I made this just for fun and wi
 First set the jumpers for the RTC. You can choose between 200h, 240h, 300h and 340h.
 
 ![jumpers](./info/jumpers.png)
+
 *RTC set to 340h*
+
 
 Plug the card into a free ISA slot, either 8bit or 16bit.
 
