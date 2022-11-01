@@ -14,9 +14,6 @@ First set the jumpers for the RTC. You can choose between 200h, 240h, 300h and 3
 
 ![jumpers](./info/jumpers.png)
 
-*RTC set to 340h*
-
-
 Plug the card into a free ISA slot, either 8bit or 16bit.
 
 [Download the program to control,](./prog/MM58167.EXE) the RTC, or download [the source, modify it to your liking and compile it with QuickBasic 7.1](./prog/MM58167.BAS)
