@@ -61,5 +61,5 @@ Alternatively you can download and check out the interactive BOM:
 
 [Photo of assembled RTC](./info/assembled.jpg)
 
-## Credit where credit is due
-[@mrehkopf](https://github.com/mrehkopf)
+## Credit
+[@mrehkopf](https://github.com/mrehkopf) - thanks for your help!
