@@ -51,8 +51,12 @@ Only if you're having problems with the interrupt output: cut the trace between 
 lol kA
 
 ## BOM
+
 ![header](./info/bom.PNG)
+
+
 **Note for the battery holder**: The holder I used is just labeled "Rainpro". No idea about the exact model. Should be a very common part, though. Here's a picture of the listing:
+
 ![header](./info/battery.png)
 
 Alternatively you can download and check out the interactive BOM:
