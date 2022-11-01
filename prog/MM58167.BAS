@@ -38,7 +38,6 @@ REM if no mode was set, display usage page
 IF ERR = 1 THEN GOTO usage
 
 REM check if RTC is at given address
-
 IF FORCE = 0 THEN
  checkstart% = VAL(HEX$(INP(rtcd + 1)))
 
