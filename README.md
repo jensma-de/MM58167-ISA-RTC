@@ -2,7 +2,7 @@
 ![header](./info/rtc.jpg)
 
 ## What is this?
-A 8bit real time clock for old computers. Keeps the time when the computer is shut down.
+A 8bit real time clock for old computers. Keeps the time when the computer is shut down. Fully covered address bus to prevent conflicts.
 
 ## Why is this?
 Yes, there are many more modern RTC's out there. I made this just for fun and with parts that were readily available back in the 80s. I like to keep things period correct 😉
