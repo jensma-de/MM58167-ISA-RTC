@@ -1,2 +1,1 @@
-*.html linguist-detectable=false
-*.htm inguist-detectable=false
+*.md linguist-detectable=false
