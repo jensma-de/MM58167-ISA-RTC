@@ -11,36 +11,35 @@ Yes, there are many more modern RTC's out there. I made this just for fun and wi
 First set the jumpers for the RTC. You can choose between 200h, 240h, 300h and 340h.
 ![jumpers](./info/jumpers.png)
 
-*RTC configured at 340h*
+Plug the card into a free ISA slot, either 8bit or 16bit.
 
-Plug in the card, battery must face towards back of the PC. See silkscreen of the card, if unsure.
+[Download the program to control,](./prog/MM58167.EXE) the RTC, or download [the source, modify it to your liking and compile it with QuickBasic 7.1](./prog/MM58167.BAS)
 
-Configure the RTC with these programs:
-   #(c) Copyright 1989-91   David Mutimer,   All rights reserved# - Great for
+```
+Usage:
+------
 
+MM58167.EXE ADDRESSh SET|GET [VERBOSE] [FORCE]
 
-<table id="verticalalign">
-    <caption>vertical-align</caption>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Copyright</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="left" valign="top"><a href="./prog/CLOCK.COM">CLOCK.COM</a></td>
-            <td align="left" valign="top">1989-91   David Mutimer</td>
-            <td align="left" valign="top">Very useful tool, usable with addresses 240h, 300h and 340h.</td>
-        </tr>
-        <tr>
-            <td align="left" valign="top">GETCLOCK.COM & SETCLOCK.COM <br/><a href="./prog/hi/">HI</a> & <a href="./prog/low/">LOW</a></td>
-            <td align="left" valign="top">DIAMOND FLOWER ELECTRONIC CO. (C)COPY RIGHT 1984, 1985, 1986</td>
-            <td align="left" valign="top">GETCLOCK.COM:<br>Set system time to time from RTC.<br><br>SETCLOCK.COM:<br>Set RTC time to system time.<br><br><b>Available as HI (300h & 340h) and LOW (200h & 240h)</b></td>
-        </tr>
-    </tbody>
-</table>
+Adressh:   The address of the RTC, set by jumpers on the PCB, e.g. 240h
+SET|GET:   Sets the RTC to the system clock and vise versa.
+[VERBOSE]: Outputs some information.
+[FORCE]:   Skip detection of RTC.
+
+Examples:
+To write the system time to the RTC, setup at 300h:
+MM58167.EXE 300h SET
+
+Set the RTC's time to the system's clock:
+MM58167.EXE 300h GET
+
+--------------------------------------------------------
+Credits to:
+github.com/mrehkopf/ & github.com/Sciurus68k/
+
+Project page:
+github.com/jensma-de/MM58167-ISA-RTC/
+```
 
 
 Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.
