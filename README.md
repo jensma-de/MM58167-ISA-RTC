@@ -27,11 +27,11 @@ MM58167.EXE ADDRESSh SET|GET [VERBOSE] [FORCE] [NOEX]
 Adressh:   The address of the RTC, set by jumpers on the PCB, e.g. 240h
 SET|GET:   Sets the RTC to the system clock and vise versa.
 [VERBOSE]: Outputs some information.
-[FORCE]:   Skip detection of RTC.
+[FORCE]:   Force given address without checking for plausible RTC data.
 [NOEX]:    Don't export the time to C:\MM581.RTC.
            The file is needed to update the year automatically.
 
-Examples:
+Example:
 To write the system time to the RTC, setup at 300h:
 MM58167.EXE 300h SET
 
