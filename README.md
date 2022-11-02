@@ -61,7 +61,7 @@ Downside to all of this is that you have to start your computer at least once in
 ![header](./info/bom.PNG)
 
 
-**Note for the battery holder**: The holder I used is just labeled "Rainpro". No idea about the exact model. Should be a very common part, though. Here's a picture of the listing:
+**Note for the battery holder**: The holder I used is just labeled "Rainpro". No idea about the exact model. Should be a very CR2032 battery holder, though. Here's a picture of the listing:
 
 ![header](./info/battery.png)
 
