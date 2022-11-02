@@ -200,7 +200,7 @@ usage:
         PRINT "Adressh:   The address of the RTC, set by jumpers on the PCB, e.g. 240h"
         PRINT "SET|GET:   Sets the RTC to the system clock and vise versa."
         PRINT "[VERBOSE]: Outputs some information."
-        PRINT "[FORCE]:   Skip detection of RTC."
+        PRINT "[FORCE]:   Force given address without checking for plausible RTC data"
         PRINT "[NOEX]:    Don't export the time to C:\MM581.RTC."
         PRINT "           The file is needed to update the year automatically."
         PRINT ""
