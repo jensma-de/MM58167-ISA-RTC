@@ -155,9 +155,9 @@ IF mode$ = "SET" THEN
                 KILL "C:\MM581.RTC"
 
                 OPEN "C:\MM581.RTC" FOR APPEND AS #1
-                PRINT #1, jahr$
-                PRINT #1, monat$
-                PRINT #1, tag$
+                PRINT #1, year$
+                PRINT #1, month$
+                PRINT #1, day$
                 CLOSE #1
 
         END IF
