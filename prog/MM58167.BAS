@@ -6,15 +6,9 @@ VERBOSE = 0
 FORCE = 0
 EXPOR = 1
 
-
 A = 0
 rtcd = 0
-P = 0
-
-
-
-
-                
+P = 0            
 
 REM get address from arguments
 rtcinput$ = UCASE$(MID$(COMMAND$, 1, 3))
@@ -32,7 +26,6 @@ FOR i = LEN(rtcinput$) TO 1 STEP -1
         P = P + 1
 NEXT i
 
-
 REM process arguments
 IF INSTR(UCASE$(COMMAND$), "GET") THEN mode$ = "GET"
 IF INSTR(UCASE$(COMMAND$), "SET") THEN mode$ = "SET"
@@ -42,17 +35,13 @@ IF INSTR(UCASE$(COMMAND$), "NOEX") THEN EXPOR = 0
 
 IF mode$ = "" THEN ERR = 1
 
-
 IF ERR = 1 THEN GOTO usage
-
-
-
 
 REM check if RTC is at given address
 
 IF FORCE = 0 THEN
- checkstart% = VAL(HEX$(INP(rtcd + 1)))
 
+ checkstart% = VAL(HEX$(INP(rtcd + 1)))
  start# = TIMER
  DO
  LOOP UNTIL (TIMER - start#) >= .1
@@ -91,17 +80,11 @@ IF mode$ = "GET" THEN
         readdate$ = monat$ + "-" + tag$ + "-" + jahr$
         readtime$ = stunde$ + ":" + minute$ + ":" + sekunde$
 
-
-        REM Check if exported date file exists
-
-
-        REM KILL "C:\MM581.RTC"
+        REM Check if a year has passed
 
         jahr$ = "89"
         monat$ = "01"
         tag$ = "23"
-
-        CLS
 
         OPEN "C:\MM581.RTC" FOR APPEND AS #1
 
@@ -138,18 +121,15 @@ IF mode$ = "GET" THEN
                 END IF
 
         ELSE
-                PRINT "nicht gefunden"
                 PRINT #1, jahr$
                 PRINT #1, monat$
                 PRINT #1, tag$
         CLOSE #1
         END IF
 
-
         IF VERBOSE = 1 THEN
                 PRINT "System date and time were set to "; readdate$; " "; readtime$
         END IF
-
 
         DATE$ = readdate$
         TIME$ = readtime$
@@ -189,11 +169,9 @@ IF mode$ = "SET" THEN
         OUT rtcd + 7, (monthwrite%)
         OUT rtcd + 9, (yearwrite%)
 
-
         IF VERBOSE = 1 THEN
                 PRINT "RTC date and time were set to "; readdate$; " "; readtime$
         END IF
-
 
         END
 
