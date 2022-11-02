@@ -111,9 +111,9 @@ IF mode$ = "GET" THEN
                                         KILL "C:\MM581.RTC"
                                     
                                         OPEN "C:\MM581.RTC" FOR APPEND AS #1
-                                                PRINT #1, jahr$
-                                                PRINT #1, monat$
-                                                PRINT #1, tag$
+                                        PRINT #1, jahr$
+                                        PRINT #1, monat$
+                                        PRINT #1, tag$
                                         CLOSE #1
 
                                 END IF
@@ -150,6 +150,18 @@ IF mode$ = "SET" THEN
         day$ = MID$(readdate$, 4, 2)
         year$ = RIGHT$(MID$(readdate$, 7, 4), 2)
 
+        IF EXPOR = 1 THEN
+
+                KILL "C:\MM581.RTC"
+
+                OPEN "C:\MM581.RTC" FOR APPEND AS #1
+                PRINT #1, jahr$
+                PRINT #1, monat$
+                PRINT #1, tag$
+                CLOSE #1
+
+        END IF
+        
         hours$ = MID$(readtime$, 1, 2)
         minutes$ = MID$(readtime$, 4, 2)
         seconds$ = MID$(readtime$, 7, 2)
