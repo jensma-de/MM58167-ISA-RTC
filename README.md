@@ -22,19 +22,18 @@ Plug the card into a free ISA slot, either 8bit or 16bit.
 Usage:
 ------
 
-MM58167.EXE ADDRESSh SET|GET [VERBOSE] [FORCE]
+MM58167.EXE ADDRESSh SET|GET [VERBOSE] [FORCE] [NOEX]
 
 Adressh:   The address of the RTC, set by jumpers on the PCB, e.g. 240h
 SET|GET:   Sets the RTC to the system clock and vise versa.
 [VERBOSE]: Outputs some information.
 [FORCE]:   Skip detection of RTC.
+[NOEX]:    Don't export the time to C:\MM581.RTC.
+           The file is needed to update the year automatically.
 
 Examples:
 To write the system time to the RTC, setup at 300h:
 MM58167.EXE 300h SET
-
-Set the RTC's time to the system's clock:
-MM58167.EXE 300h GET
 
 --------------------------------------------------------
 Credits to:
@@ -48,7 +47,14 @@ github.com/jensma-de/MM58167-ISA-RTC/
 Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.
 
 ## Is this Y2K-compatible?
-lol kA
+Yes. Just make sure your OS can handle dates after 1999!
+
+## I've heard the MM58167 is terribly old and can't even increment years by it's own
+That's right. In order increment the year automatically the MM58167.EXE offloads some information to C:\MM581.RTC.
+If you don't want this for some reason you can disable it with the NOEX argument.
+
+Downside to all of this is that you have to start your computer at least once in two years. But seriously - if you boot up your PC that rarely you might want to remove the time keeping battery anyways :)
+
 
 ## BOM
 
