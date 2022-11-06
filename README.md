@@ -16,8 +16,16 @@ First set the jumpers for the RTC. You can choose between 200h, 240h, 300h and 3
 
 Plug the card into a free ISA slot, either 8bit or 16bit.
 
-[Download the program to control,](./prog/MM58167.EXE) the RTC, or download [the source, modify it to your liking and compile it with QuickBasic 7.1](./prog/MM58167.BAS)
+Download the control prgram and put it on your PC:
 
+Control program: [MM58167.EXE](./prog/MM58167.EXE)
+Source: [MM58167.BAS](./prog/MM58167.BAS)
+
+Alternative German version:
+Control program: [MM58167_GER.EXE](./prog/MM58167_GER.EXE)
+Source: [MM58167_GER.BAS](./prog/MM58167_GER.BAS)
+
+Next, have a look at the usage description:
 ```
 Usage:
 ------
@@ -43,8 +51,34 @@ Project page:
 github.com/jensma-de/MM58167-ISA-RTC/
 ```
 
+At first you need to set the current time and date to the clock:
+```
+date
+```
 
-Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.
+After this command you can set the date interactively. Next up is the time:
+
+```
+time
+```
+
+Same interactive configuration here. Next up you put your time and date into the RTC (assuming you configured it for adress 340h):
+
+```
+MM58167.EXE 340h SET
+```
+
+Now the RTC is set and should, if you put in a CR2032 coin cell into it, keep the time.
+
+To read the date and time from the RTC to update your system on startup, add this to your C:\AUTOSTART.BAT:
+
+```
+MM58167.EXE 340h GET
+```
+
+That's it!
+
+#Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.#
 
 ## Is this Y2K-compatible?
 Yes. Just make sure your OS can handle dates after 1999!
