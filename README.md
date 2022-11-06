@@ -18,12 +18,12 @@ Plug the card into a free ISA slot, either 8bit or 16bit.
 
 Download the control prgram and put it on your PC:
 
-Control program: [MM58167.EXE](./prog/MM58167.EXE)
-Source: [MM58167.BAS](./prog/MM58167.BAS)
+Control program:
+[MM58167.EXE](./prog/MM58167.EXE) (Source: [MM58167.BAS](./prog/MM58167.BAS))
 
 Alternative German version:
-Control program: [MM58167_GER.EXE](./prog/MM58167_GER.EXE)
-Source: [MM58167_GER.BAS](./prog/MM58167_GER.BAS)
+
+Control program: [MM58167_GER.EXE](./prog/MM58167_GER.EXE) (Source: [MM58167_GER.BAS](./prog/MM58167_GER.BAS))
 
 Next, have a look at the usage description:
 ```
@@ -78,7 +78,7 @@ MM58167.EXE 340h GET
 
 That's it!
 
-#Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.#
+Only if you're having problems with the interrupt output: cut the trace between the two pads of the jumper in the top left corner of the pcb. Then close the center and the right pad.
 
 ## Is this Y2K-compatible?
 Yes. Just make sure your OS can handle dates after 1999!
