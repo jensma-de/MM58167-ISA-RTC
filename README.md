@@ -1,9 +1,6 @@
 # MM58167-ISA-RTC
 ![header](./info/rtc.jpg)
 
-## Is this fully tested?
-NOPE! Not yet. Right now I'm moving and will be able to do the final tests soonTM.
-
 ## What is this?
 A 8bit real time clock for old computers. Keeps the time when the computer is shut down. Fully covered address bus to prevent conflicts.
 The backup battery should theoretically last for about six years.
